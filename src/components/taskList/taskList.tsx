@@ -1,30 +1,36 @@
-import { TaskItem } from '../taskItem/taskItem'
-import styles from './TaskList.module.css'
+import { Box } from '../atoms/Box/Box';
+import { TaskItem } from '../taskItem/taskItem';
+import styles from './TaskList.module.css';
 
 interface ITask {
-  id: number
-  title: string
-  completed: boolean
+  id: number;
+  title: string;
+  completed: boolean;
 }
 
 export interface ITaskListProps {
-  taskList: ITask[]
-  incompletedTasks: number
-  updateTaskStatus: (id: number, completedValue: boolean) => void
-  deleteTask: (id: number) => void
+  taskList: ITask[];
+  incompletedTasks: number;
+  updateTaskStatus: (id: number, completedValue: boolean) => void;
+  deleteTask: (id: number) => void;
 }
 
-export const TaskList = ({ taskList, incompletedTasks, updateTaskStatus, deleteTask }: ITaskListProps) => {
+export const TaskList = ({
+  taskList,
+  incompletedTasks,
+  updateTaskStatus,
+  deleteTask,
+}: ITaskListProps) => {
   if (taskList && taskList.length > 0) {
     return (
-      <div className="box">
+      <Box>
         <h2 className={styles.title}>
           {incompletedTasks > 0 && <> Il reste {incompletedTasks} taches a faire</>}
           {incompletedTasks == 0 && <> Toutes les taches sont terminées</>}
         </h2>
 
         <ul className={styles.container}>
-          {taskList.map((task) => (
+          {taskList.map(task => (
             <TaskItem
               key={task.id}
               task={task}
@@ -34,15 +40,15 @@ export const TaskList = ({ taskList, incompletedTasks, updateTaskStatus, deleteT
             />
           ))}
         </ul>
-      </div>
-    )
+      </Box>
+    );
   } else {
     return (
-      <div className="box">
+      <Box>
         <h2 className={styles.title}>Aucune tache disponible</h2>
-      </div>
-    )
+      </Box>
+    );
   }
-}
+};
 
-export default TaskList
+export default TaskList;

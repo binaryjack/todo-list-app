@@ -1,6 +1,6 @@
 # React + Vite
 
-commande :  npm create vite@latest todo-list-app -- --template react
+commande : npm create vite@latest todo-list-app -- --template react
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 

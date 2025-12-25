@@ -1,7 +1,7 @@
-import styles from './Footer.module.css'
+import styles from './Footer.module.css';
 
 export interface IFooterProps {
-  completedTasks: number
+  completedTasks: number;
 }
 
 export const Footer = ({ completedTasks }: IFooterProps) => {
@@ -10,8 +10,8 @@ export const Footer = ({ completedTasks }: IFooterProps) => {
       <footer>
         <code className={styles.footer}>{completedTasks} taches terminées</code>
       </footer>
-    )
-  } else return <></>
-}
+    );
+  } else return <></>;
+};
 
-export default Footer
+export default Footer;

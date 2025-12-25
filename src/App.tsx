@@ -1,9 +1,8 @@
-import './App.css'
-import { TaskContainer } from './components/taskContainer'
+import './App.css';
+import { TaskContainer } from './components/taskContainer';
 
 export const App = () => {
+  return <TaskContainer />;
+};
 
-  return (<TaskContainer />)
-}
-
-export default App
+export default App;
