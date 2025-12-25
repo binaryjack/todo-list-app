@@ -16,7 +16,12 @@ export const TaskInput = ({ addNewTask }: ITaskInputProps) => {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    // j'aime bien ici me prémunir des potentiels undefined.
+    // ça ne sera pratiquement jamais le cas ici sauf: le jour ou cette fonction >
+    // deviens polymorphe et servira plusieurs d'inputs type différents.
+    // du coup je préfère avoir toujours ce réflexe.
+    // e?.preventDefault();    ? nullish operator me préserve de e === undefined et ?.(); de préserve de preventDefault === undefined
+    e?.preventDefault?.();
     addNewTask(taskTitle);
     setTaskTitle('');
   };
