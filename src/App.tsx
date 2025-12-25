@@ -1,8 +1,6 @@
 import './App.css';
 import { TaskContainer } from './components/taskContainer';
-
-export const App = () => {
-  return <TaskContainer />;
-};
+/** ici pas besoin d'entourer avec un fragment <></> */
+export const App = () => <TaskContainer />;
 
 export default App;

@@ -40,7 +40,8 @@ export const TaskContainer = () => {
 
   const completedTasks = taskList.filter(t => t.completed).length;
   const incompletedTasks = taskList.length - completedTasks;
-
+  /** la structure exacte avec main c'est comme suit main est recommandé  https://developer.mozilla.org/en-US/docs/Web/HTML/Element/main  d'être entourré par footer et header...
+   * mais j'ai déjà vu ça aussi  */
   return (
     <>
       <Header />
